@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4A6FA5;
-            --secondary-color: #6B9AC4;
-            --accent-color: #97D8C4;
-            --light-color: #F4F7F5;
-            --dark-color: #2C3E50;
-            --danger-color: #E74C3C;
-            --success-color: #2ECC71;
-            --warning-color: #F39C12;
+            --primary-color: #A67C52; /* Café medio */
+            --secondary-color: #D4A76A; /* Café claro/dorado */
+            --accent-color: #F5E8D0; /* Piel claro */
+            --light-color: #FFF9F0; /* Piel muy claro */
+            --dark-color: #5D4037; /* Café oscuro */
+            --danger-color: #C67C54; /* Café rojizo */
+            --success-color: #8D6E63; /* Café grisáceo */
+            --warning-color: #D7CCC8; /* Café claro neutro */
             --border-radius: 8px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow: 0 4px 6px rgba(93, 64, 55, 0.1);
             --transition: all 0.3s ease;
         }
 
         .dark-theme {
-            --primary-color: #5D8CC8;
-            --secondary-color: #7FB3D5;
-            --accent-color: #A3E4D7;
-            --light-color: #2C3E50;
-            --dark-color: #ECF0F1;
-            --danger-color: #E74C3C;
-            --success-color: #27AE60;
-            --warning-color: #F39C12;
+            --primary-color: #C8A27B;
+            --secondary-color: #E6C9A8;
+            --accent-color: #FFF9F0;
+            --light-color: #3E2723;
+            --dark-color: #EFEBE9;
+            --danger-color: #D7A184;
+            --success-color: #A1887F;
+            --warning-color: #BCAAA4;
         }
 
         * {
@@ -125,6 +125,7 @@
         .btn-secondary {
             background-color: var(--accent-color);
             color: var(--dark-color);
+            border: 1px solid var(--secondary-color);
         }
 
         .btn-secondary:hover {
@@ -138,7 +139,7 @@
         }
 
         .btn-danger:hover {
-            background-color: #c0392b;
+            background-color: #B56A48;
         }
 
         .theme-toggle {
@@ -213,7 +214,7 @@
         }
 
         .view-btn:hover:not(.active) {
-            background-color: rgba(74, 111, 165, 0.1);
+            background-color: rgba(166, 124, 82, 0.1);
         }
 
         .date-navigation {
@@ -255,7 +256,7 @@
             gap: 15px;
             margin-bottom: 25px;
             padding: 20px;
-            background-color: rgba(107, 154, 196, 0.1);
+            background-color: rgba(212, 167, 106, 0.1);
             border-radius: var(--border-radius);
         }
 
@@ -320,7 +321,7 @@
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 1px;
-            background-color: #e0e0e0;
+            background-color: #E8D5C4;
         }
 
         .calendar-day {
@@ -334,22 +335,23 @@
         }
 
         .calendar-day:hover {
-            background-color: rgba(74, 111, 165, 0.05);
+            background-color: rgba(166, 124, 82, 0.05);
         }
 
         .day-number {
             font-weight: 600;
             margin-bottom: 5px;
             font-size: 18px;
+            color: var(--dark-color);
         }
 
         .other-month {
-            color: #aaa;
-            background-color: #f9f9f9;
+            color: #B0A295;
+            background-color: #F8F4EF;
         }
 
         .today {
-            background-color: rgba(151, 216, 196, 0.2);
+            background-color: rgba(245, 232, 208, 0.5);
             border: 2px solid var(--accent-color);
         }
 
@@ -380,6 +382,7 @@
 
         .activity-item:hover {
             opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         /* Vista de lista */
@@ -408,7 +411,7 @@
             align-items: center;
             padding: 15px;
             border-radius: var(--border-radius);
-            background-color: rgba(107, 154, 196, 0.1);
+            background-color: rgba(212, 167, 106, 0.1);
             border-left: 5px solid var(--primary-color);
             transition: var(--transition);
         }
@@ -528,7 +531,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+            box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.2);
         }
 
         .form-row {
@@ -559,17 +562,17 @@
         }
 
         .priority-low {
-            background-color: rgba(46, 204, 113, 0.2);
+            background-color: rgba(141, 110, 99, 0.2);
             color: var(--success-color);
         }
 
         .priority-medium {
-            background-color: rgba(243, 156, 18, 0.2);
-            color: var(--warning-color);
+            background-color: rgba(212, 167, 106, 0.2);
+            color: var(--secondary-color);
         }
 
         .priority-high {
-            background-color: rgba(231, 76, 60, 0.2);
+            background-color: rgba(198, 124, 84, 0.2);
             color: var(--danger-color);
         }
 
@@ -593,11 +596,12 @@
             cursor: pointer;
             transition: var(--transition);
             border: 2px solid transparent;
+            background-color: rgba(245, 232, 208, 0.3);
         }
 
         .activity-type.selected {
             border-color: var(--primary-color);
-            background-color: rgba(74, 111, 165, 0.1);
+            background-color: rgba(166, 124, 82, 0.1);
         }
 
         .type-color {
@@ -611,7 +615,7 @@
             display: flex;
             justify-content: flex-end;
             gap: 15px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid #E8D5C4;
         }
 
         /* Estadísticas */
@@ -632,11 +636,12 @@
             align-items: center;
             text-align: center;
             transition: var(--transition);
+            border: 1px solid var(--accent-color);
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(93, 64, 55, 0.15);
         }
 
         .stat-icon {
@@ -810,28 +815,28 @@
         <!-- Estadísticas -->
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-icon" style="background-color: rgba(74, 111, 165, 0.1); color: var(--primary-color);">
+                <div class="stat-icon" style="background-color: rgba(166, 124, 82, 0.1); color: var(--primary-color);">
                     <i class="fas fa-calendar-check"></i>
                 </div>
                 <div class="stat-count" id="totalActivities">0</div>
                 <div class="stat-label">Actividades Totales</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon" style="background-color: rgba(46, 204, 113, 0.1); color: var(--success-color);">
+                <div class="stat-icon" style="background-color: rgba(141, 110, 99, 0.1); color: var(--success-color);">
                     <i class="fas fa-clock"></i>
                 </div>
                 <div class="stat-count" id="upcomingActivities">0</div>
                 <div class="stat-label">Próximas Actividades</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon" style="background-color: rgba(243, 156, 18, 0.1); color: var(--warning-color);">
+                <div class="stat-icon" style="background-color: rgba(198, 124, 84, 0.1); color: var(--danger-color);">
                     <i class="fas fa-exclamation-circle"></i>
                 </div>
                 <div class="stat-count" id="highPriority">0</div>
                 <div class="stat-label">Alta Prioridad</div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon" style="background-color: rgba(107, 154, 196, 0.1); color: var(--secondary-color);">
+                <div class="stat-icon" style="background-color: rgba(212, 167, 106, 0.1); color: var(--secondary-color);">
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="stat-count" id="totalResponsibles">0</div>
@@ -932,15 +937,16 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
     <script>
-        // Configuración de Firebase
+        // Configuración de Firebase actualizada
         const firebaseConfig = {
-            apiKey: "AIzaSyBR98d1aJeW5nNdTrGDi97kOeHjIN9ZUtg",
-            authDomain: "base-de-datos-a9c56.firebaseapp.com",
-            databaseURL: "https://base-de-datos-a9c56-default-rtdb.firebaseio.com",
-            projectId: "base-de-datos-a9c56",
-            storageBucket: "base-de-datos-a9c56.firebasestorage.app",
-            messagingSenderId: "230400091318",
-            appId: "1:230400091318:web:c7e81691c044baeff6b217"
+            apiKey: "AIzaSyB2Dg4EDqPz9IbOAGxAuON1BSz5RUzLzJk",
+            authDomain: "project-382582203393375123.firebaseapp.com",
+            databaseURL: "https://project-382582203393375123-default-rtdb.firebaseio.com",
+            projectId: "project-382582203393375123",
+            storageBucket: "project-382582203393375123.firebasestorage.app",
+            messagingSenderId: "639029399056",
+            appId: "1:639029399056:web:bf15e933210166d00f8495",
+            measurementId: "G-BPMTHP2JSD"
         };
 
         // Inicializar Firebase
@@ -954,14 +960,14 @@
         let editActivityId = null;
         let filteredActivities = [];
 
-        // Tipos de actividades con colores
+        // Tipos de actividades con colores en tonos piel/café
         const activityTypes = [
-            { id: 'reunion', name: 'Reunión', color: '#4A6FA5', icon: 'fas fa-users' },
-            { id: 'evento', name: 'Evento', color: '#6B9AC4', icon: 'fas fa-calendar' },
-            { id: 'servicio', name: 'Servicio', color: '#97D8C4', icon: 'fas fa-hands-helping' },
-            { id: 'capacitacion', name: 'Capacitación', color: '#F4B942', icon: 'fas fa-chalkboard-teacher' },
-            { id: 'social', name: 'Social', color: '#E55934', icon: 'fas fa-glass-cheers' },
-            { id: 'deportivo', name: 'Deportivo', color: '#9BC53D', icon: 'fas fa-running' }
+            { id: 'reunion', name: 'Reunión', color: '#A67C52', icon: 'fas fa-users' },
+            { id: 'evento', name: 'Evento', color: '#D4A76A', icon: 'fas fa-calendar' },
+            { id: 'servicio', name: 'Servicio', color: '#8D6E63', icon: 'fas fa-hands-helping' },
+            { id: 'capacitacion', name: 'Capacitación', color: '#C8A27B', icon: 'fas fa-chalkboard-teacher' },
+            { id: 'social', name: 'Social', color: '#E6C9A8', icon: 'fas fa-glass-cheers' },
+            { id: 'deportivo', name: 'Deportivo', color: '#BCAAA4', icon: 'fas fa-running' }
         ];
 
         // Inicializar la aplicación
